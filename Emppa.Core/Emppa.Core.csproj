@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE92CC76-CDE8-4744-8960-073F724F55FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Emppa.Core</RootNamespace>
+    <AssemblyName>Emppa.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dapper\SqlMapper.cs" />
+    <Compile Include="Dapper\SqlMapperExtensions.cs" />
+    <Compile Include="DataAccess\ColumnAttribute.cs" />
+    <Compile Include="DataAccess\DbHelper.cs" />
+    <Compile Include="DataAccess\IDbHelper.cs" />
+    <Compile Include="Encryption\MD5Hashing.cs" />
+    <Compile Include="Encryption\SHA1Hashing.cs" />
+    <Compile Include="EventLog\ILogger.cs" />
+    <Compile Include="EventLog\Logger\DefaultLogger.cs" />
+    <Compile Include="EventLog\LogType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wechat\Domain\BaseDomain.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainBasic.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainEventBasic.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainEventClick.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainEventLocation.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainEventScan.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainEventScanAndSubscribe.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainEventSubscribe.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainEventUnsubscribe.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainEventView.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainImage.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainLink.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainLocation.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainText.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainVideo.cs" />
+    <Compile Include="Wechat\Domain\Request\RequestDomainVoice.cs" />
+    <Compile Include="Wechat\Domain\Response\ResponseDomainBasic.cs" />
+    <Compile Include="Wechat\Domain\Response\ResponseDomainNews.cs" />
+    <Compile Include="Wechat\Domain\Response\ResponseDomainText.cs" />
+    <Compile Include="Wechat\Domain\Response\ResponseDomainVoice.cs" />
+    <Compile Include="Wechat\Enum\Request\RequestEventType.cs" />
+    <Compile Include="Wechat\Enum\Request\RequestMessageType.cs" />
+    <Compile Include="Wechat\Enum\Response\ResponseMessageType.cs" />
+    <Compile Include="Wechat\WechatManager.cs" />
+    <Compile Include="Wechat\WechatMessage.cs" />
+    <Compile Include="Wechat\WechatUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
